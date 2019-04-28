@@ -34,7 +34,7 @@ public:
 			long data;
 			cout<<"Enter Data to insert:";
 			cin>>data;
-			t->root=t->insert(t->root,data);
+			root=insert(t->root,data);
 		}
 	}
 	//An Insertion function that takes the input parameter the Tree's root and data
