@@ -25,10 +25,17 @@ public:
 	// A Vector that Stores the result of a Traversal..
 	vector<long> traversal;
 public:
-	Tree()
+	Tree(int n)
 	{
 	    //The root is initially NULL before any insertion.
 		root=NULL;
+		for(int i=0;i<n;i++)
+		{
+			long data;
+			cout<<"Enter Data to insert:";
+			cin>>data;
+			t->root=t->insert(t->root,data);
+		}
 	}
 	//An Insertion function that takes the input parameter the Tree's root and data
 	Node * insert(Node* root,long data)
@@ -70,14 +77,8 @@ int main()
 	int n;
 	cout<<"Enter the Number of elements in the Tree:";
 	cin>>n;
-	Tree *t = new Tree();
-	for(int i=0;i<n;i++)
-	{
-		long data;
-		cout<<"Enter Data to insert:";
-		cin>>data;
-		t->root=t->insert(t->root,data);
-	}
+	/*Data insertion performed by Tree Constructor*/
+	Tree *t = new Tree(n);
 	//Call the 'inorder' function which stores the result in the class member traversal.
 	t->inorder(t->root);
 
